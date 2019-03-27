@@ -22,4 +22,4 @@ class App {
 GSDevTools.create();
 TweenMax.set('svg', {visibility: 'visible'})
 
-let app = new App();
+new App();
