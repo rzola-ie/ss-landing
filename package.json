@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/ryanzola/parcel-boilerplate#readme",
   "dependencies": {
-    "gsap": "^2.0.2",
-    "jquery": "^3.3.1"
+    "gsap": "^2.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
