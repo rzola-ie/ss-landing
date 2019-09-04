@@ -18,6 +18,7 @@ buttons.forEach(button => {
   button.addEventListener('click', () => {
     modal.dataset.active = true;
     body.dataset.modal = true;
+    html.style.overflow = 'hidden';
   
     TweenLite.set(modal, {
       height: 'auto',
@@ -35,6 +36,8 @@ modal.addEventListener('click', e => {
   delete modal.dataset.active;
   delete body.dataset.modal;
 
+  html.style.overflow = 'visible';
+
   TweenLite.set(modal, {
     height: 0,
     top: 0
@@ -44,6 +47,8 @@ modal.addEventListener('click', e => {
 modalButton.addEventListener('click', () => {
   delete modal.dataset.active;
   delete body.dataset.modal;
+
+  html.style.overflow = 'visible';
 
   TweenLite.set(modal, {
     height: 0,
