@@ -18,13 +18,14 @@ buttons.forEach(button => {
   button.addEventListener('click', () => {
     modal.dataset.active = true;
     body.dataset.modal = true;
-    html.style.overflow = 'hidden';
   
     TweenLite.set(modal, {
       height: 'auto',
       'min-height': window.screen.height + 'px',
       top: window.scrollY
     });
+
+    html.style.overflow = 'hidden';
   });
 })
 
