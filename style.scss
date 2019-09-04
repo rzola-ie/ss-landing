@@ -1,6 +1,12 @@
 /* TABLE OF CONTENTS
 ===================================== 
-
+  12:   GENERAL
+  86:   HEADER
+  123:  SVG ELEMENTS
+  147:  HERO
+  158:  SUB-FOOTER
+  174:  FOOTER
+  203:  MODAL
 */
 
 /* GENERAL
@@ -27,10 +33,10 @@ body {
 *:after {
   position: relative;
   box-sizing: inherit;
-  z-index: 2;
 }
 
 body {
+  min-width: 320px;
   margin: 0;
 
   &[data-modal] {
@@ -41,6 +47,7 @@ body {
 a {
   text-decoration: none;
   color: var(--teal);
+  white-space: nowrap;
 
   &:hover {
     text-decoration: hover;
@@ -80,15 +87,13 @@ p {
 ===================================== */
 
 .header {
-  position: relative;
   height: 100px;
-  z-index: 2;
   display: flex;
   padding: 1rem 1.8rem;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  // background-color: white;
+  word-break: normal;
   font-size: 1rem;
   letter-spacing: 0.4px;
 
@@ -122,10 +127,9 @@ p {
   // display: none;
   position: relative;
   width: 100%;
-  z-index: 2;
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @include for-tablet-landscape-up {
     display: block
   }
 }
@@ -135,7 +139,7 @@ p {
   min-width: 320px;
   position: relative;
 
-  @media screen and (min-width: 768px) {
+  @include for-tablet-landscape-up {
     display: none;
   }
 }
@@ -145,101 +149,13 @@ p {
 
 #hero-bg {
   fill: var(--teal);
-  // fill: none;
-  // stroke: red;
 }
+
 .info-text a {
   fill: var(--teal);
 }
 
-/* HOW IT WORKS
-===================================== */
-
-#how-it-works h4 {
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.5px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.7px;
-  }
-}
-
-#how-it-works p {
-  line-height: 1.4148;
-  letter-spacing: 0px;
-  margin-bottom: 2.4rem;
-
-  &:last-child {
-    font-size: 1.75rem;
-    padding: 0 2rem;
-    line-height: 1;
-  }
-
-  @media screen and (min-width: 768px) {
-    line-height: 1.44;
-    margin-bottom: 0.55rem;
-    font-size: 0.7rem;
-    padding: 0;
-    
-    &:last-child {
-      padding: 0 1.2rem;
-      font-size: 0.7rem;
-    }
-  }
-
-
-}
-
-.copy {
-  font-size: 2.7rem;
-  text-align: center;
-}
-
-.copy p {
-  font-size: 1.9rem;
-}
-
-.copy.part-1 h4,
-.copy.part-2 h4 {
-  font-size: 2.4rem;
-  margin-bottom: 0.9rem;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0.1rem;
-    font-size: 1.05rem;
-    letter-spacing: 0px;
-  }
-}
-
-.copy.part-1 p,
-.copy.part-2 p {
-  padding: 0 1rem;
-  margin-bottom: 2rem;
-  line-height: 1.4;
-  letter-spacing: 1.1px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-    padding: 0 1.5rem;
-    font-size: 0.69rem;
-    line-height: 1.2;
-    letter-spacing: 0px;
-  }
-}
-
-// .copy.part-2 p {
-//   padding: 0 1rem;
-//   line-height: 1.4;
-//   letter-spacing: 1.1px;
-
-//   @media screen and (min-width: 768px) {
-
-//   }
-// }
-
-/* FOOTER
+/* SUB-FOOTER
 ===================================== */
 
 .sub-footer {
@@ -255,6 +171,9 @@ p {
   }
 }
 
+/* FOOTER
+===================================== */
+
 footer {
   height: 100px;
   padding: 1rem 2rem;
@@ -262,10 +181,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
 
   @include for-tablet-landscape-up {
-
     font-size: 1.25rem;
   }
 }
@@ -281,33 +198,6 @@ footer a {
 
 footer span {
   margin: 0 1rem;
-}
-
-/* JUNK
-===================================== */
-
-.ref {
-  position: absolute;
-  display: none;
-  top: 20px;
-  width: 100%;
-  z-index: 0;
-
-  @media screen and (min-width: 768px) {
-    display: block;
-  }
-}
-
-.ref-mobile {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-  opacity: 0.5;
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
 }
 
 /* MODAL
