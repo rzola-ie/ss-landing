@@ -14,6 +14,7 @@ buttons.forEach(button => {
     modal.dataset.active = true;
     body.dataset.modal = true;
 
+    window.scrollTo(0, 0);
     body.style.height = screen.height;
     modal.style.height = screen.availHeight + 'px'
   });
