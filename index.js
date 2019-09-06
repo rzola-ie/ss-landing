@@ -6,7 +6,6 @@ const selectAll = s => document.querySelectorAll(s);
 const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // DOM ELEMENTS
-const html = select('html');
 const body = select('body');
 const modal = select('#modal');
 const canvas = select('#canvas');
@@ -25,8 +24,6 @@ buttons.forEach(button => {
       height: 'auto',
       'min-height': window.screen.height + 'px',
     });
-
-    html.style.overflow = 'hidden';
   });
 })
 
@@ -38,8 +35,6 @@ modal.addEventListener('click', e => {
   delete modal.dataset.active;
   delete body.dataset.modal;
 
-  html.style.overflow = 'visible';
-
   TweenLite.set(modal, {
     height: 0,
     top: 0
@@ -49,8 +44,6 @@ modal.addEventListener('click', e => {
 modalButton.addEventListener('click', () => {
   delete modal.dataset.active;
   delete body.dataset.modal;
-
-  html.style.overflow = 'visible';
 
   TweenLite.set(modal, {
     height: 0,
