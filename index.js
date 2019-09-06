@@ -1,5 +1,3 @@
-
-
 // HELPER METHODS
 const select = s => document.querySelector(s);
 const selectAll = s => document.querySelectorAll(s);
@@ -15,7 +13,7 @@ buttons.forEach(button => {
   button.addEventListener('click', () => {
     modal.dataset.active = true;
     body.dataset.modal = true;
-    
+
     body.style.height = screen.height;
     modal.style.height = screen.availHeight + 'px'
   });
