@@ -19,10 +19,6 @@ buttons.forEach(button => {
     window.scrollTo(0, 0);
     body.style.height = screen.height;
     modal.style.height = screen.availHeight + 'px'
-  
-    // TweenLite.set(modal, {
-    //   height: screen.availHeight + 'px',
-    // });
   });
 })
 
@@ -37,12 +33,6 @@ modal.addEventListener('click', e => {
   body.style.height = 'auto'
   modal.style.height = 0
   modal.style.top = 0
-
-
-  // TweenLite.set(modal, {
-  //   height: 0,
-  //   top: 0
-  // });
 });
 
 modalButton.addEventListener('click', () => {
@@ -52,9 +42,4 @@ modalButton.addEventListener('click', () => {
   body.style.height = 'auto'
   modal.style.height = 0
   modal.style.top = 0
-
-  // TweenLite.set(modal, {
-  //   height: 0,
-  //   top: 0
-  // });
 });
