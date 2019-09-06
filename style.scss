@@ -37,10 +37,6 @@ body {
 
 body {
   min-width: 320px;
-
-  &[data-modal] {
-    overflow: hidden;
-  }
 }
 
 a {
