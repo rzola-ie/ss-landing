@@ -20,7 +20,7 @@ buttons.forEach(button => {
   
     TweenLite.set(modal, {
       height: 'auto',
-      'min-height': document.height + 'px',
+      'min-height': screen.availHeight + 'px',
     });
   });
 })
