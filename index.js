@@ -7,6 +7,7 @@ const selectAll = s => document.querySelectorAll(s);
 // DOM ELEMENTS
 const body = select('body');
 const modal = select('#modal');
+const container = select('.container');
 const buttons = selectAll('.button');
 const modalButton = select('.modal-button');
 
