@@ -3,12 +3,10 @@
 // HELPER METHODS
 const select = s => document.querySelector(s);
 const selectAll = s => document.querySelectorAll(s);
-const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // DOM ELEMENTS
 const body = select('body');
 const modal = select('#modal');
-const canvas = select('#canvas');
 const buttons = selectAll('.button');
 const modalButton = select('.modal-button');
 
