@@ -32,9 +32,12 @@ html {
 
 body {
   min-width: 320px;
+  padding-top: 100px;
 
   &[data-modal] {
-    overflow: hidden;
+    @include for-tablet-portrait-up {
+      overflow: hidden;
+    }
   }
 }
 
@@ -81,15 +84,21 @@ p {
 ===================================== */
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 100px;
   display: flex;
   padding: 1rem 1.8rem;
+  background-color: white;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   word-break: normal;
   font-size: 1rem;
   letter-spacing: 0.4px;
+  z-index: 99;
 
   @media screen and (min-width: 500px) {
     .header-break {
@@ -100,7 +109,6 @@ p {
   @include for-tablet-landscape-up {
     padding: 1rem 2rem;
     font-size: 1rem;
-    // justify-content: center;
     align-items: center;
   }
 
@@ -111,7 +119,12 @@ p {
 
 .header p:first-child {
   margin-bottom: 0.5rem;
+}
 
+.header a {
+  @include for-tablet-landscape-up {
+    pointer-events: none;
+  }
 }
 
 /* SVG ELEMENTS
@@ -145,6 +158,10 @@ p {
   fill: var(--teal);
 }
 
+.info-text #contact {
+  fill: var(--teal);
+}
+
 .info-text a {
   fill: var(--teal);
 }
@@ -162,6 +179,12 @@ p {
 
   @include for-tablet-landscape-up {
     font-size: 1.25rem;
+  }
+}
+
+.sub-footer a {
+  @include for-tablet-landscape-up {
+    pointer-events: none;
   }
 }
 
@@ -206,7 +229,7 @@ footer span {
   width: 100%;
   min-width: 320px;
   min-height: 100%;
-  padding: 0.5rem;
+  padding: 120px 0.5rem 0.5rem;
   background: rgba(black, 0.7);
   opacity: 0;
   pointer-events: none;
@@ -226,7 +249,7 @@ footer span {
   }
 
   @include for-tablet-landscape-up {
-    padding: 2rem;
+    padding: 120px 2rem 2rem;
   }
 }
 
@@ -265,6 +288,12 @@ footer span {
 
   &:nth-child(4) {
     margin-bottom: 0;
+  }
+}
+
+#modal-content a[href^="tel"] {
+  @include for-tablet-landscape-up {
+    pointer-events: none;
   }
 }
 
