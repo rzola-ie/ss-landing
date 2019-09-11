@@ -12,8 +12,8 @@
 </head>
 
 <body>
+  <p class="us-consumers">This site is intended for US Consumers</p>
   <header class="header">
-    <p><small>This site is intended for US Consumers</small></p>
     <p>Call to see if you qualify for this study <a href="tel:+15555555555">(xxx)
         xxx-xxxx</a></p>
   </header>
@@ -31,8 +31,10 @@
     <g id="hero">
       <path id="hero-bg" d="M 0 0 h800 v540 l-800 42 Z" />
 
-      <image id="hero-img-1" xlink:href="./assets/hero-img-1-mobile.png" x="38" y="32" width="254" height="282" />
-      <image id="hero-img-2" xlink:href="./assets/hero-img-2.jpg" x="0" y="304" width="195" height="289" />
+      <image id="hero-img-1" xlink:href="./assets/GettyImages-917634922-comp.jpg" x="38" y="32" width="254" height="282"
+        preserveAspectRatio="xMinYMin slice" />
+      <image id="hero-img-2" xlink:href="./assets/GettyImages-1007232098-comp.jpg" x="0" y="304" width="195"
+        height="289" preserveAspectRatio="xMinYMin slice" />
 
       <g id="text-area">
         <text fill="white">
@@ -192,6 +194,10 @@
       <clipPath id="header-shape-desktop">
         <path d="M 0 0 h800 v285 l-800 60 Z"></path>
       </clipPath>
+
+      <filter id="colorMeSaturate">
+        <feColorMatrix in="SourceGraphic" type="saturate" values="1.25" />
+      </filter>
     </defs>
 
     <!-- #67B89F -->
@@ -200,8 +206,11 @@
     <g id="hero">
       <path id="hero-bg" d="M 0 0 h800 v285 l-800 60 Z"></path>
 
-      <image id="hero-img-1" xlink:href="assets/hero-img-1.jpg" x="91" y="30" width="220" height="176" />
-      <image id="hero-img-2" xlink:href="assets/hero-img-2.jpg" x="34" y="162" height="228" width="155" />
+      <image id="hero-img-1" xlink:href="./assets/GettyImages-917634922-comp.jpg" x="91" y="30" width="220" height="176"
+        preserveAspectRatio="xMinYMin slice" filter="url(#colorMeSaturate)" />
+
+      <image id="hero-img-2" xlink:href="./assets/GettyImages-1007232098-comp.jpg" x="34" y="162" width="155"
+        height="228" preserveAspectRatio="xMidYMid slice" />
 
       <g id="text-area">
         <text x="355" y="72" fill="white">
@@ -426,7 +435,6 @@
     </div>
   </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
   <script src="index.js"></script>
 </body>
 
