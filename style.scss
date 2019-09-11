@@ -32,7 +32,6 @@ html {
 
 body {
   min-width: 320px;
-  padding-top: 100px;
 
   &[data-modal] {
     @include for-tablet-portrait-up {
@@ -80,15 +79,29 @@ p {
   }
 }
 
+.us-consumers {
+  font-size: 80%;
+  padding: 1rem 2rem 0 2rem;
+  
+  @include for-desktop-up {
+    padding-top: 1rem;
+    text-align: center;
+  }
+}
+
 /* HEADER
 ===================================== */
 
 .header {
-  position: fixed;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 80px;
   display: flex;
   padding: 1rem 1.8rem;
   background-color: white;
@@ -113,12 +126,9 @@ p {
   }
 
   @include for-desktop-up {
+    height: 100px;
     font-size: 1.25rem;
   }
-}
-
-.header p:first-child {
-  margin-bottom: 0.5rem;
 }
 
 .header a {
