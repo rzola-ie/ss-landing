@@ -245,6 +245,7 @@ footer span {
   pointer-events: none;
   transition: opacity 200ms ease-in-out;
   overflow-y: scroll;
+  z-index: 100;
 
   &[data-active] {
     opacity: 1;
