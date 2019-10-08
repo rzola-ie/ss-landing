@@ -14,9 +14,9 @@ buttons.forEach(button => {
     modal.dataset.active = true;
     body.dataset.modal = true;
 
-    window.scrollTo(0, 0);
-    body.style.height = screen.height;
-    modal.style.height = screen.availHeight + 'px'
+
+    // body.style.height = screen.height;
+    // modal.style.height = screen.availHeight + 'px'
   });
 })
 
@@ -28,16 +28,16 @@ modal.addEventListener('click', e => {
   delete modal.dataset.active;
   delete body.dataset.modal;
 
-  body.style.height = 'auto'
-  modal.style.height = 0
-  modal.style.top = 0
+  // body.style.height = 'auto'
+  // modal.style.height = 0
+  // modal.style.top = 0
 });
 
 modalButton.addEventListener('click', () => {
   delete modal.dataset.active;
   delete body.dataset.modal;
 
-  body.style.height = 'auto'
-  modal.style.height = 0
-  modal.style.top = 0
+  // body.style.height = 'auto'
+  // modal.style.height = 0
+  // modal.style.top = 0
 });
