@@ -1,29 +1,25 @@
 {
-  "name": "3d-stuff",
+  "name": "self-selection-landing",
   "version": "1.0.0",
-  "description": "Parcel Boilerplate",
+  "description": "Self-selection Landing Page",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanzola/parcel-boilerplate.git"
+    "url": "git+https://github.com/rzola-ie/ss-landing"
   },
-  "keywords": [
-    "parcel",
-    "boilerplate"
-  ],
-  "author": "ryanzola <ryanzola@me.com>",
+  "keywords": [],
+  "author": "ryanzola <ryan-zola@idea-evolver.com>",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/ryanzola/parcel-boilerplate/issues"
   },
   "homepage": "https://github.com/ryanzola/parcel-boilerplate#readme",
-  "dependencies": {
-    "gsap": "^2.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "parcel-bundler": "^1.10.3",
     "sass": "^1.16.0"

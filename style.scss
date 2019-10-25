@@ -231,21 +231,18 @@ footer span {
 ===================================== */
 
 #modal {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
   width: 100%;
-  min-width: 320px;
-  min-height: 100%;
-  padding: 0.5rem;
-  background: rgba(black, 0.7);
+  height: 100vh;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms ease-in-out;
-  overflow-y: scroll;
-  z-index: 100;
+  padding: 0.8rem 0.8rem 8rem 0.8rem;
+  overflow: scroll;
 
   &[data-active] {
     opacity: 1;
@@ -350,7 +347,8 @@ footer span {
 .modal-button {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: 0.9rem;
+  padding: 0;
   font-size: 1.5rem;
   border: none;
   background-color: transparent;
