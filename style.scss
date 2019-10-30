@@ -267,10 +267,13 @@ footer span {
   padding: 2rem 1rem;
   background-color: white;
   border: 2px solid var(--teal);
+  display: -ms-grid;
   display: grid;
   grid-gap: 2rem;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: repeat(3, auto);
   opacity: 0;
   transform: translateY(30px);
   transition: all 200ms ease-in-out;
@@ -280,7 +283,9 @@ footer span {
     width: 90vw;
     max-width: 900px;
     padding: 2rem;
+    -ms-grid-columns: 1fr auto 1.5fr;
     grid-template-columns: 1fr auto 1.5fr;
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
     grid-gap: 3.5rem;
   }
@@ -310,13 +315,17 @@ footer span {
 }
 
 .numbers {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
   grid-gap: 1rem;
 }
 
 .number {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
   grid-gap: 1.5rem;
   align-items: center;
