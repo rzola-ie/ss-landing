@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rzola-ie/ss-landing"
+    "url": "git+https://github.com/IdeaEvolver/cutter-ss-landingpage.git"
   },
   "keywords": [],
   "author": "ryanzola <ryan-zola@idea-evolver.com>",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/ryanzola/parcel-boilerplate/issues"
+    "url": "https://github.com/IdeaEvolver/cutter-ss-landingpage.git/issues"
   },
-  "homepage": "https://github.com/ryanzola/parcel-boilerplate#readme",
+  "homepage": "https://github.com/IdeaEvolver/cutter-ss-landingpage.git#readme",
   "dependencies": {},
   "devDependencies": {
     "parcel-bundler": "^1.10.3",
