@@ -14,9 +14,18 @@
 
 @import 'breakpoints.scss';
 
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("./assets/fonts/HelveticaNeue.ttc") format("truetype");
+	font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --teal: #47bb9e;
-  --yellow: #e9b545;
+  --yellow: #eab544;
+  --blue: #1d4288;
 }
 
 html {
@@ -26,12 +35,16 @@ html {
 *,
 *:before,
 *:after {
-  position: relative;
   box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   min-width: 320px;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
   &[data-modal] {
     @include for-tablet-portrait-up {
@@ -41,7 +54,6 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: var(--teal);
   white-space: nowrap;
 
@@ -54,38 +66,69 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 0;
+  margin: 0 0 0.7rem 0;
+}
+
+hr {
+  width: 270px;
+  border: 2px solid var(--teal);
+
+  @include for-tablet-landscape-up {
+    max-width: 25%
+  }
 }
 
 p {
-  margin: 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .button {
-  fill: var(--teal);
-  stroke: var(--teal);
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
+  background-color: var(--teal);
+  border: 1px solid var(--teal);
+  padding:1rem 0;
+  border-radius: 0.25rem;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+  color: #FFF;
+  font-weight: bold;
+  
   cursor: pointer;
   transition: all 200ms ease-in-out;
 
   &:hover {
-    fill: darken(#47bb9e, 10%);
-    stroke: darken(#47bb9e, 10%);
+    background-color: darken(#47bb9e, 10%);
+    border: 1px solid darken(#47bb9e, 10%);
   }
 
   &:focus {
     outline: none;
-    stroke: rgba(#38977f, 0.5);
-    stroke-width: 0.3rem;
+    border: 1px solid rgba(#38977f, 0.5);
+    box-shadow: 0 0 0 0.28rem rgba(#47bb9e, 0.5);
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 1rem;
+    padding: 1rem;
+    letter-spacing: 0px;
+  }
+
+  @include for-big-desktop-up {
+    font-size: 1.3rem;
+
+    letter-spacing: 1.5px;
   }
 }
 
 .us-consumers {
+  margin: 0;
   font-size: 80%;
   padding: 1rem 2rem 0;
   
   @include for-desktop-up {
     padding-top: 1rem;
-    text-align: center;
   }
 }
 
@@ -101,7 +144,6 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
   display: flex;
   padding: 1rem 1.8rem;
   background-color: white;
@@ -110,7 +152,8 @@ p {
   justify-content: center;
   word-break: normal;
   font-size: 1rem;
-  letter-spacing: 0.4px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
   z-index: 99;
 
   @media screen and (min-width: 500px) {
@@ -120,60 +163,280 @@ p {
   }
 
   @include for-tablet-landscape-up {
-    padding: 1rem 2rem;
+    padding: 1.4rem 2rem;
     font-size: 1rem;
     align-items: center;
   }
 
   @include for-desktop-up {
-    height: 100px;
+    // height: 100px;
     font-size: 1.25rem;
   }
 }
 
-.header a {
-  @include for-tablet-landscape-up {
+.header p {
+  margin: 0;
+}
+
+.header #contact {
+  color: var(--teal);
+  pointer-events: all;
+
+  @media (hover: hover) {
     pointer-events: none;
   }
 }
 
-/* SVG ELEMENTS
+/* MAIN CONTENT 
 ===================================== */
 
-#canvas-desktop {
-  // display: none;
-  position: relative;
-  width: 100%;
-  display: none;
-
-  @include for-tablet-landscape-up {
-    display: block
-  }
+.container {
+  max-width: 1440px;
+  margin: auto;
 }
 
-#canvas-mobile {
-  width: 100%;
-  min-width: 320px;
-  position: relative;
+/* HERO
+===================================== */
+
+section#hero {
+  padding-bottom: 1rem;
+  color: #FFF;
+}
+
+section#hero #canvas-mobile {
+  display: block;
 
   @include for-tablet-landscape-up {
     display: none;
   }
 }
 
-/* HERO
-===================================== */
+section#hero #canvas-desktop {
+  display: none;
+  
+  @include for-tablet-landscape-up {
+    display: block;
+  }
+}
 
 #hero-bg {
   fill: var(--teal);
 }
 
-.info-text #contact {
-  fill: var(--teal);
+#cta p {
+  color: #000;
+}
+
+#cta p #contact {
+  color: var(--teal);
 }
 
 .info-text a {
   fill: var(--teal);
+}
+
+/* VIDEO SECTION
+===================================== */
+
+#video-section {
+  padding: 1rem 0;
+}
+
+#video-section #title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--teal);
+
+  @include for-tablet-portrait-up {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+}
+
+#video-section #cta {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+
+  @include for-tablet-portrait-up {
+    width: 60%;
+  }
+
+} 
+
+#video-section #video-container {
+  width: 90%;
+  padding: 1rem 0;
+  margin: auto;
+
+  @include for-tablet-portrait-up {
+    padding: 1rem 0;
+    width: 60%;
+  }
+} 
+
+/* COLUMN SECTION
+===================================== */
+#column-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:0 0 1rem;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+  }
+}
+
+#column-section .col {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  flex: 1 1 0px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &:first-child {
+    padding-top: 2rem;
+
+    .body {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &:last-child {
+    padding-bottom: 2rem;
+  }
+
+  &:first-child,
+  &:last-child {
+    @include for-tablet-landscape-up {
+      padding: 1rem;
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    padding: 1rem;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    width: 270px;
+    height: 4px;
+    background-color: var(--teal);
+
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+  }
+}
+
+#column-section .col .img-container {
+  height: 90px;
+  width: 90px;
+  margin: auto auto 10px;
+  border: 3px solid var(--teal);
+  padding: 0.8rem;
+  border-radius: 50%;
+
+  @include for-tablet-portrait-up {
+    height: 110px;
+    width: 110px;
+    border-width: 4px;
+    padding: 1rem;
+  }
+}
+
+#column-section .col .img-container img {
+  height: 100%;
+}
+
+#column-section .col .step {
+  font-size: 1.9rem;
+  letter-spacing: 1.4px;
+}
+
+#column-section .col .body {
+  font-size: 1.375rem;
+}
+
+/* TAKE PART SECTION
+===================================== */
+#take-part-section {
+  padding: 1rem 0;
+}
+
+#take-part-section #container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  @include for-tablet-portrait-up {
+    width: 60%
+  }
+}
+
+#take-part-section #title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  @include for-tablet-portrait-up {
+    font-size: 3rem;
+  }
+}
+
+#take-part-section ul {
+  list-style: none;
+  margin: auto;
+  padding-left: 0.5rem;
+
+
+  @include for-tablet-portrait-up {
+    width: 80%;
+  }
+}
+
+#take-part-section ul li {
+  line-height: 1.2;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  @include for-tablet-portrait-up {
+    font-size: 3rem;
+  }
+
+  &::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--teal); /* Change the color */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1rem; /* Also needed for space (tweak if needed) */
+
+  @include for-tablet-portrait-up {
+    width: 2rem;
+  }
+  }
+}
+
+#take-part-section ul li span {
+  font-size: 0.9rem;
+  
+  @include for-tablet-portrait-up {
+    font-size: 1.375rem;
+  }
 }
 
 /* SUB-FOOTER
@@ -181,15 +444,24 @@ p {
 
 .sub-footer {
   height: 100px;
-  padding: 1rem 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 1.8rem 1rem 1.8rem;
   background-color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: normal;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
 
   @include for-tablet-landscape-up {
     font-size: 1.25rem;
   }
+}
+
+.sub-footer p {
+  margin: 0;
 }
 
 .sub-footer a {
