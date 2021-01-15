@@ -368,7 +368,6 @@ section#hero #canvas-desktop #cta p {
   width: 100%;
   max-width: 500px;
   position: relative;
-  flex: 1 1 0px;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -449,6 +448,7 @@ section#hero #canvas-desktop #cta p {
 }
 
 #take-part-section #container {
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
