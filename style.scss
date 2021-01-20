@@ -360,7 +360,7 @@ section#hero #canvas-desktop #cta p {
   @include for-tablet-landscape-up {
     flex-direction: row;
     align-items: flex-start;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
   }
 }
 
@@ -371,30 +371,19 @@ section#hero #canvas-desktop #cta p {
   padding: 3rem;
   display: flex;
   flex-direction: column;
+  flex: 1 1 100%;
   text-align: center;
 
-  &:first-child {
-    padding-top: 2rem;
+  @include for-tablet-portrait-up {
+    padding-top: 1rem;
+  }
 
+  &:first-child {
     .body {
       margin-bottom: 1.6rem;
     }
   }
 
-  &:last-child {
-    padding-bottom: 2rem;
-  }
-
-  &:first-child,
-  &:last-child {
-    @include for-tablet-landscape-up {
-      padding: 1rem;
-    }
-  }
-
-  @include for-tablet-landscape-up {
-    padding: 1rem;
-  }
 
   &::after {
     position: absolute;
@@ -433,12 +422,16 @@ section#hero #canvas-desktop #cta p {
 }
 
 #column-section .col .step {
-  font-size: 1.9rem;
+  font-size: 1.625rem;
   letter-spacing: 1.4px;
 }
 
 #column-section .col .body {
-  font-size: 1.375rem;
+  font-size: 0.9rem;
+
+  @include for-tablet-portrait-up {
+    font-size: 1.2rem;
+  }
 }
 
 /* TAKE PART SECTION
