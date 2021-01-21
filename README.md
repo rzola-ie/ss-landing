@@ -1,6 +1,6 @@
 # Self-selection landing page
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f40add06-6f27-4f25-baaf-75d88af3179c/deploy-status)](https://app.netlify.com/sites/rz-ss-landing/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3f9f5e24-ac2e-428b-9ead-d8b08cfbe64a/deploy-status)](https://app.netlify.com/sites/sleepy-albattani-690ecd/deploys)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/rzola-ie/ss-landing/badge)](https://www.codefactor.io/repository/github/rzola-ie/ss-landing)
 
