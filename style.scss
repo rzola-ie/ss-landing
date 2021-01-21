@@ -47,7 +47,7 @@ body {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
   &[data-modal] {
-    @include for-tablet-portrait-up {
+    @include for-desktop-up {
       overflow: hidden;
     }
   }
@@ -66,20 +66,20 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 0 0 0.7rem 0;
+  margin: 0 0 0.7rem;
 }
 
 hr {
   width: 270px;
   border: 2px solid var(--teal);
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     max-width: 25%
   }
 }
 
 p {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
 }
 
 .button {
@@ -109,7 +109,7 @@ p {
     box-shadow: 0 0 0 0.28rem rgba(#47bb9e, 0.5);
   }
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     font-size: 1rem;
     padding: 1rem;
     letter-spacing: 0px;
@@ -171,7 +171,7 @@ p {
     }
   }
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     padding: 1.4rem 2rem;
     font-size: 1rem;
     align-items: center;
@@ -187,7 +187,7 @@ p {
   margin: 0;
 }
 
-/* MAIN CONTENT 
+/* MAIN CONTENT
 ===================================== */
 
 .container {
@@ -208,7 +208,7 @@ section#hero {
 section#hero #canvas-mobile {
   display: block;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     display: none;
   }
 }
@@ -249,14 +249,14 @@ section#hero #canvas-mobile #cta p {
 section#hero #canvas-desktop {
   display: none;
   
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     display: block;
   }
 }
 
-section#hero #canvas-desktop #hero-text {
-  padding: 0.2rem 1rem;
-}
+// section#hero #canvas-desktop #hero-text {
+//   padding: 0.2rem 1rem;
+// }
 
 section#hero #canvas-desktop #hero-text h1 {
   margin-bottom: 0.5rem;
@@ -310,7 +310,11 @@ section#hero #canvas-desktop #cta p {
 ===================================== */
 
 #video-section {
-  padding: 1rem 0;
+  padding: 0 0 3rem;
+
+  @include for-desktop-up {
+    padding: 1rem 0;
+  }
 }
 
 #video-section #title {
@@ -320,21 +324,20 @@ section#hero #canvas-desktop #cta p {
   letter-spacing: 2px;
   color: var(--teal);
 
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     font-size: 3rem;
     letter-spacing: 3px;
   }
 }
 
 #video-section #cta {
-  width: 90%;
+  max-width: 30ch;
   margin: auto;
   text-align: center;
 
-  @include for-tablet-portrait-up {
-    width: 60%;
+  @include for-desktop-up {
+    max-width: 100%;
   }
-
 } 
 
 #video-section #video-container {
@@ -342,11 +345,11 @@ section#hero #canvas-desktop #cta p {
   padding: 1rem 0;
   margin: auto;
 
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     padding: 1rem 0;
     width: 60%;
   }
-} 
+}
 
 /* COLUMN SECTION
 ===================================== */
@@ -355,59 +358,44 @@ section#hero #canvas-desktop #cta p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:0 0 1rem;
+  margin-bottom: 3rem;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     flex-direction: row;
     align-items: flex-start;
-    padding: 1rem 2rem;
+    margin-bottom: 0;
+    padding: 3rem 4rem;
+  }
+}
+
+#column-section hr {
+  margin: 0 auto;
+
+  @include for-desktop-up {
+    display: none;
+    visibility: hidden;
   }
 }
 
 #column-section .col {
-  width: 100%;
-  max-width: 500px;
   position: relative;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
   text-align: center;
+  margin: 3rem auto;
+
+  @include for-desktop-up {
+    margin: 0;
+  }
 
   &:first-child {
-    padding-top: 2rem;
-
     .body {
       margin-bottom: 1.6rem;
     }
   }
 
-  &:last-child {
-    padding-bottom: 2rem;
-  }
+  &:nth-of-type(2) {
 
-  &:first-child,
-  &:last-child {
-    @include for-tablet-landscape-up {
-      padding: 1rem;
-    }
-  }
-
-  @include for-tablet-landscape-up {
-    padding: 1rem;
-  }
-
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    content: '';
-    width: 270px;
-    height: 4px;
-    background-color: var(--teal);
-
-    @include for-tablet-landscape-up {
-      display: none;
+    @include for-desktop-up {
+      margin: 0 auto;
     }
   }
 }
@@ -415,12 +403,12 @@ section#hero #canvas-desktop #cta p {
 #column-section .col .img-container {
   height: 90px;
   width: 90px;
-  margin: auto auto 10px;
+  margin: 10px auto;
   border: 3px solid var(--teal);
   padding: 0.8rem;
   border-radius: 50%;
 
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     height: 110px;
     width: 110px;
     border-width: 4px;
@@ -433,12 +421,17 @@ section#hero #canvas-desktop #cta p {
 }
 
 #column-section .col .step {
-  font-size: 1.9rem;
+  font-size: 1.625rem;
   letter-spacing: 1.4px;
 }
 
 #column-section .col .body {
-  font-size: 1.375rem;
+  width: 26ch;
+  font-size: 1.2rem;
+
+  @include for-desktop-up {
+    font-size: 1.2rem;
+  }
 }
 
 /* TAKE PART SECTION
@@ -453,18 +446,19 @@ section#hero #canvas-desktop #cta p {
   display: flex;
   flex-direction: column;
 
-  @include for-tablet-portrait-up {
-    width: 60%
+  @include for-desktop-up {
+    width: 65%
   }
 }
 
 #take-part-section #title {
   text-align: center;
-  font-size: 1.3rem;
+  margin: 0 auto 0.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 2px;
 
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     font-size: 3rem;
   }
 }
@@ -475,8 +469,8 @@ section#hero #canvas-desktop #cta p {
   padding-left: 0.5rem;
 
 
-  @include for-tablet-portrait-up {
-    width: 80%;
+  @include for-desktop-up {
+    max-width: 100%;
   }
 }
 
@@ -486,7 +480,7 @@ section#hero #canvas-desktop #cta p {
   display: flex;
   align-items: center;
 
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     font-size: 3rem;
   }
 
@@ -496,16 +490,16 @@ section#hero #canvas-desktop #cta p {
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1rem; /* Also needed for space (tweak if needed) */
 
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     width: 2rem;
   }
   }
 }
 
 #take-part-section ul li span {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   
-  @include for-tablet-portrait-up {
+  @include for-desktop-up {
     font-size: 1.375rem;
   }
 }
@@ -516,7 +510,7 @@ section#hero #canvas-desktop #cta p {
 .sub-footer {
   height: 100px;
   display: flex;
-  padding: 0 1.8rem 1rem 1.8rem;
+  padding: 0 1.8rem 1rem;
   background-color: white;
   align-items: center;
   justify-content: center;
@@ -526,7 +520,7 @@ section#hero #canvas-desktop #cta p {
   font-weight: 600;
   letter-spacing: 0.8px;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     font-size: 1.5rem;
   }
 }
@@ -536,7 +530,7 @@ section#hero #canvas-desktop #cta p {
 }
 
 .sub-footer a {
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     pointer-events: none;
   }
 }
@@ -552,7 +546,7 @@ footer {
   justify-content: center;
   align-items: center;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     font-size: 1.25rem;
   }
 }
@@ -584,7 +578,7 @@ footer span {
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms ease-in-out;
-  padding: 0.8rem 0.8rem 8rem 0.8rem;
+  padding: 0.8rem 0.8rem 8rem;
   overflow: scroll;
 
   &[data-active] {
@@ -599,7 +593,7 @@ footer span {
     }
   }
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     padding: 120px 2rem 2rem;
   }
 }
@@ -622,7 +616,7 @@ footer span {
   transition: all 200ms ease-in-out;
   transition-delay: 100ms;
 
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     width: 90vw;
     max-width: 900px;
     padding: 2rem;
@@ -648,7 +642,7 @@ footer span {
 }
 
 #modal-content a[href^="tel"] {
-  @include for-tablet-landscape-up {
+  @include for-desktop-up {
     pointer-events: none;
   }
 }
