@@ -44,7 +44,7 @@ body {
   min-width: 320px;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 
   &[data-modal] {
     @include for-desktop-up {
@@ -66,7 +66,11 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.5rem;
+
+  @include for-desktop-up {
+    margin: 0 0 0.7rem;
+  }
 }
 
 hr {
@@ -90,10 +94,11 @@ p {
   border: 1px solid var(--teal);
   padding:1rem 0;
   border-radius: 0.25rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   white-space: nowrap;
   color: #FFF;
   font-weight: bold;
+  font-size: 0.875rem;
   
   cursor: pointer;
   transition: all 200ms ease-in-out;
@@ -110,7 +115,7 @@ p {
   }
 
   @include for-desktop-up {
-    font-size: 1rem;
+    font-size: 1.0625rem;
     padding: 1rem;
     letter-spacing: 0;
   }
@@ -160,7 +165,8 @@ p {
   align-items: flex-start;
   justify-content: center;
   word-break: normal;
-  font-size: 1rem;
+  font-size: 0.6875rem;
+  line-height: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.8px;
   z-index: 99;
@@ -173,13 +179,8 @@ p {
 
   @include for-desktop-up {
     padding: 1.4rem 2rem;
-    font-size: 1rem;
+    font-size: 1.375rem;
     align-items: center;
-  }
-
-  @include for-desktop-up {
-    // height: 100px;
-    font-size: 1.5rem;
   }
 }
 
@@ -223,11 +224,14 @@ section#hero #canvas-mobile #hero-text h1 {
 
 section#hero #canvas-mobile #hero-text h2 {
   font-weight: 600;
-  font-size: 1.9rem
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
 }
 
 section#hero #canvas-mobile #hero-text p {
   font-size: 1.49rem;
+  margin-bottom: 1rem;
+  line-height: 1.825rem;
 }
 
 section#hero #canvas-mobile #cta {
@@ -267,7 +271,7 @@ section#hero #canvas-desktop #hero-text h1 {
 section#hero #canvas-desktop #hero-text h2 {
   font-weight: 600;
   font-size: 1rem;
-  line-height: 1.1
+  line-height: 1.1rem;
 }
 
 section#hero #canvas-desktop #hero-text p {
@@ -319,24 +323,25 @@ section#hero #canvas-desktop #cta p {
 
 #video-section #title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  letter-spacing: 2px;
   color: var(--teal);
 
   @include for-desktop-up {
-    font-size: 3rem;
-    letter-spacing: 3px;
+    font-size: 2.625rem;
   }
 }
 
 #video-section #cta {
-  max-width: 30ch;
+  max-width: 35ch;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   margin: auto;
   text-align: center;
 
   @include for-desktop-up {
     max-width: 100%;
+    font-size: 1.5rem;
   }
 }
 
@@ -380,7 +385,7 @@ section#hero #canvas-desktop #cta p {
 #column-section .col {
   position: relative;
   text-align: center;
-  margin: 3rem auto;
+  margin: 2rem auto;
 
   @include for-desktop-up {
     margin: 0;
@@ -401,18 +406,18 @@ section#hero #canvas-desktop #cta p {
 }
 
 #column-section .col .img-container {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
   margin: 10px auto;
-  border: 3px solid var(--teal);
-  padding: 0.8rem;
+  border: 2.6px solid var(--teal);
+  padding: 0.55rem;
   border-radius: 50%;
 
   @include for-desktop-up {
-    height: 110px;
-    width: 110px;
-    border-width: 4px;
-    padding: 1rem;
+    height: 108px;
+    width: 108px;
+    border-width: 3px;
+    padding: 1.3125rem;
   }
 }
 
@@ -421,16 +426,22 @@ section#hero #canvas-desktop #cta p {
 }
 
 #column-section .col .step {
-  font-size: 1.625rem;
+  font-size: 1.125rem;
   letter-spacing: 1.4px;
+  margin-bottom: 10px;
+
+  @include for-desktop-up {
+    font-size: 1.75rem;
+  }
 }
 
 #column-section .col .body {
-  width: 26ch;
-  font-size: 1.2rem;
+  width: 29ch;
+  line-height: 1.25rem;
 
   @include for-desktop-up {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
   }
 }
 
@@ -454,12 +465,13 @@ section#hero #canvas-desktop #cta p {
 #take-part-section #title {
   text-align: center;
   margin: 0 1rem 0.7rem;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 1px;
 
   @include for-desktop-up {
-    font-size: 2.2rem;
+    font-size: 2.25rem;
+    
     margin: 0 auto 0.7rem;
   }
 }
@@ -478,12 +490,13 @@ section#hero #canvas-desktop #cta p {
 #take-part-section ul li {
   line-height: 1.2;
   // letter-spacing: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
 
   @include for-desktop-up {
-    font-size: 2.6rem;
+    line-height: 2.6rem;
+    font-size: 2.4rem;
   }
 
   &::before {
@@ -499,7 +512,7 @@ section#hero #canvas-desktop #cta p {
 }
 
 #take-part-section ul li span {
-  font-size: 1.2rem;
+  font-size: 0.8125rem;
   
   @include for-desktop-up {
     font-size: 1.375rem;
@@ -510,20 +523,19 @@ section#hero #canvas-desktop #cta p {
 ===================================== */
 
 .sub-footer {
-  height: 100px;
   display: flex;
-  padding: 0 1.8rem 1rem;
+  padding: 1rem 4rem;
   background-color: white;
   align-items: center;
   justify-content: center;
   text-align: center;
   word-break: normal;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.8px;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
 
   @include for-desktop-up {
-    font-size: 1.5rem;
+    padding: 2.5rem;
+    font-size: 1.375rem;
   }
 }
 
@@ -542,11 +554,12 @@ section#hero #canvas-desktop #cta p {
 
 footer {
   height: 100px;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   background-color: var(--yellow);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.75rem;
 
   @include for-desktop-up {
     font-size: 1.25rem;
