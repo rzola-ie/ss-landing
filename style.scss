@@ -476,9 +476,9 @@ section#hero #canvas-desktop #cta p {
 }
 
 #take-part-section ul li {
-  line-height: 1;
+  line-height: 1.2;
   // letter-spacing: 0;
-  font-size: 1.4rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
 
@@ -490,7 +490,7 @@ section#hero #canvas-desktop #cta p {
     content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
     color: var(--teal); /* Change the color */
     display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1rem; /* Also needed for space (tweak if needed) */
+    width: 1.5rem; /* Also needed for space (tweak if needed) */
 
   @include for-desktop-up {
     width: 2rem;
