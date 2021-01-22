@@ -75,7 +75,7 @@ h4 {
 
 hr {
   width: 270px;
-  border: 2px solid var(--teal);
+  border: 1px solid var(--teal);
 
   @include for-desktop-up {
     max-width: 25%
