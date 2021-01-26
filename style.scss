@@ -207,7 +207,7 @@ section#hero {
 
 /* HERO MOBILE
 ===================================== */
-section#hero #canvas-mobile {
+section#hero .canvas-mobile {
   display: block;
 
   @include for-desktop-up {
@@ -215,7 +215,7 @@ section#hero #canvas-mobile {
   }
 }
 
-section#hero #canvas-mobile #hero-text h1 {
+section#hero .canvas-mobile #hero-text h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   letter-spacing: 1.4px;
@@ -223,25 +223,25 @@ section#hero #canvas-mobile #hero-text h1 {
   text-align: center;
 }
 
-section#hero #canvas-mobile #hero-text h2 {
+section#hero .canvas-mobile #hero-text h2 {
   font-weight: 600;
   font-size: 1.9rem;
   margin-bottom: 1rem;
 }
 
-section#hero #canvas-mobile #hero-text p {
+section#hero .canvas-mobile #hero-text p {
   font-size: 1.49rem;
   margin-bottom: 1rem;
   line-height: 1.825rem;
 }
 
-section#hero #canvas-mobile #cta {
+section#hero .canvas-mobile #cta {
   height: 100%;
   display: flex;
   align-items: center
 }
 
-section#hero #canvas-mobile #cta p {
+section#hero .canvas-mobile #cta p {
   font-size: 1.5rem;
   font-weight: bold;
   padding-left: 1rem;
@@ -251,7 +251,7 @@ section#hero #canvas-mobile #cta p {
 
 /* HERO DESKTOP
 ===================================== */
-section#hero #canvas-desktop {
+section#hero .canvas-desktop {
   display: none;
   
   @include for-desktop-up {
@@ -259,35 +259,31 @@ section#hero #canvas-desktop {
   }
 }
 
-// section#hero #canvas-desktop #hero-text {
-//   padding: 0.2rem 1rem;
-// }
-
-section#hero #canvas-desktop #hero-text h1 {
+section#hero .canvas-desktop #hero-text h1 {
   margin-bottom: 0.5rem;
   letter-spacing: 1.4px;
   line-height: 1.05;
 }
 
-section#hero #canvas-desktop #hero-text h2 {
+section#hero .canvas-desktop #hero-text h2 {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.1rem;
 }
 
-section#hero #canvas-desktop #hero-text p {
+section#hero .canvas-desktop #hero-text p {
   font-size: 0.65rem;
   line-height: 1.3
 }
 
-section#hero #canvas-desktop #cta {
+section#hero .canvas-desktop #cta {
   height: 100%;
   display: flex;
   align-items: center;
   background-color: white;
 }
 
-section#hero #canvas-desktop #cta p {
+section#hero .canvas-desktop #cta p {
   font-size: 0.7rem;
   font-weight: bold;
   padding-left: 1rem;
